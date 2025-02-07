@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const EventCard = ({ 
@@ -13,9 +12,6 @@ const EventCard = ({
     date, 
     time,
     location,
-    organizedBy,
-    userHasLiked,
-    userHasParticipated,
     ticketPrice 
 }) => {
     return (
