@@ -13,7 +13,6 @@ const Profile = () => {
                 const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/v1/user/profile`, {
                     withCredentials: true, // Ensures cookies are sent
                 });
-                console.log("User Data:", response.data);
                 setUser(response.data);
             } catch (error) {
                 console.error("Error fetching user data:", error);
@@ -38,7 +37,6 @@ const Profile = () => {
                 events: prevUser.events.filter((event) => event._id !== eventId),
             }));
 
-            console.log("Event deleted successfully");
         } catch (error) {
             console.error("Error deleting event:", error);
         }

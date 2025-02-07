@@ -59,7 +59,6 @@ export const getAllEvents = async (req, res) => {
             filter,
             "title description image likes participants category ticketPrice eventDate eventTime location organizedBy"
         );
-        console.log(events);
 
         res.status(200).json(events);
     } catch (error) {
@@ -128,9 +127,7 @@ export const likeEvent = async (req, res) => {
       event.likedBy.push(userId); 
     }
 
-    console.log("User ID:", userId);
     await event.save();
-    console.log("Event ID:", eventId);
 
     req.io.to(eventId).emit("likeUpdate", { eventId, likesCount: event.likes });
 
