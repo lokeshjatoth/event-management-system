@@ -15,7 +15,8 @@ const EventCard = ({
     location,
     organizedBy,
     userHasLiked,
-    userHasParticipated 
+    userHasParticipated,
+    ticketPrice 
 }) => {
     return (
         <div>
@@ -24,9 +25,14 @@ const EventCard = ({
                     <img className="rounded-t-lg w-full h-45 object-cover" src={image} alt="thumbnail" />
                 </Link>
                 <div className="p-5">
-                    <Link to={`/event/${id}`}>
-                        <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-90">{title.slice(0, 15)+"..."}</h5>
-                    </Link>
+                    <div className="flex justify-between items-start mb-2">
+                        <Link to={`/event/${id}`}>
+                            <h5 className="text-2xl font-bold tracking-tight text-gray-90">{title.slice(0, 15)+"..."}</h5>
+                        </Link>
+                        <span className="bg-green-100 text-green-800 text-lg font-semibold px-2.5 py-0.5 rounded-sm">
+                            ₹{ticketPrice}
+                        </span>
+                    </div>
                     <div className="flex flex-wrap gap-2 mb-2">
                         <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-sm">{category}</span>
                         <span className="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded-sm flex items-center">

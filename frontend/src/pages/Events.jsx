@@ -248,6 +248,7 @@ const Events = () => {
                 organizedBy={event.organizedBy}
                 userHasLiked={event.userHasLiked}
                 userHasParticipated={event.userHasParticipated}
+                ticketPrice={event.ticketPrice}
               />
             ))}
           </div>

@@ -68,15 +68,21 @@ const Profile = () => {
                         {user.events.map((event) => (
                             <div key={event._id}>
                                 <EventCard
+                                    key={event._id}
+                                    id={event._id}
                                     title={event.title}
                                     description={event.description}
                                     image={event.image}
-                                    id={event._id}
                                     likes={event.likes}
                                     participants={event.participants.length}
                                     category={event.category}
                                     date={event.eventDate}
                                     time={event.eventTime}
+                                    location={event.location}
+                                    organizedBy={event.organizedBy}
+                                    userHasLiked={event.userHasLiked}
+                                    userHasParticipated={event.userHasParticipated}
+                                    ticketPrice={event.ticketPrice}
                                 />
                                 <div className="items-center justify-center flex mt-2">
                                     <button
